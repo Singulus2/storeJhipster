@@ -1,0 +1,67 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "gateway",
+    "applications": {
+      "invoice": {
+        "applicationIndex": 2,
+        "serverPort": "8082"
+      },
+      "notification": {
+        "applicationIndex": 3,
+        "serverPort": "8083"
+      },
+      "product": {
+        "applicationIndex": 1,
+        "serverPort": "8081"
+      }
+    },
+    "authenticationType": "jwt",
+    "baseName": "store",
+    "blueprints": [],
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "angularX",
+    "clientPackageManager": "npm",
+    "clientTheme": "minty",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1681485533250,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "devServerPort": 4200,
+    "dtoSuffix": "DTO",
+    "enableGradleEnterprise": false,
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": true,
+    "enableTranslation": true,
+    "entities": ["Invoice", "OrderItem", "Shipment", "Product", "Customer", "ProductCategory", "ProductOrder", "Notification"],
+    "entitySuffix": "",
+    "gradleEnterpriseHost": "",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "7.9.2",
+    "jwtSecretKey": "MDZjYjkwMWY0YTk5OTI1MzA1YWFjMzk2MGVkNTNkNTIzNGJjMzhiMDcyMGE5ZjRmYWI2MjFiZDczNzVhYjRlMGU4MmU2ODZmYzk4MDFlMTQ3M2Y5YTVkODY4ZDU5OTdlYjljZGI2OWM1MDVmYzliNjFhZTg1Mjk0MGRiNjA1MzU=",
+    "languages": ["de"],
+    "lastLiquibaseTimestamp": 1681486013000,
+    "messageBroker": "kafka",
+    "microfrontend": false,
+    "microfrontends": [],
+    "monorepository": true,
+    "nativeLanguage": "de",
+    "otherModules": [],
+    "packageFolder": "com/devk/store",
+    "packageName": "com.devk.store",
+    "pages": [],
+    "prodDatabaseType": "oracle",
+    "reactive": true,
+    "searchEngine": "elasticsearch",
+    "serverPort": "8080",
+    "serviceDiscoveryType": "eureka",
+    "skipCheckLengthOfIdentifier": false,
+    "skipCommitHook": true,
+    "skipFakeData": false,
+    "skipUserManagement": false,
+    "testFrameworks": ["cypress", "protractor", "gatling", "cucumber"],
+    "websocket": false,
+    "withAdminUi": true
+  }
+}
