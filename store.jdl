@@ -1,0 +1,343 @@
+/*
+ * This is a microservice e-commerce store sample with Gateway and three microservice applications.
+ * This uses eureka for service discovery and OIDC authentication.
+ * This also creates the required Kubernetes deployment manifests.
+ */
+
+application {
+  config {
+      applicationType gateway
+      authenticationType jwt
+      baseName store
+      blueprints []
+      buildTool maven
+      cacheProvider hazelcast
+      clientFramework angularX
+      clientPackageManager npm
+      clientTheme minty
+      clientThemeVariant primary
+      creationTimestamp 1681485533250
+      databaseType sql
+      devDatabaseType h2Disk
+      dtoSuffix DTO
+      enableGradleEnterprise false
+      enableHibernateCache true
+      enableSwaggerCodegen true
+      enableTranslation true
+      gradleEnterpriseHost ""
+      jhiPrefix jhi
+      jhipsterVersion "7.9.2"
+      jwtSecretKey "MDZjYjkwMWY0YTk5OTI1MzA1YWFjMzk2MGVkNTNkNTIzNGJjMzhiMDcyMGE5ZjRmYWI2MjFiZDczNzVhYjRlMGU4MmU2ODZmYzk4MDFlMTQ3M2Y5YTVkODY4ZDU5OTdlYjljZGI2OWM1MDVmYzliNjFhZTg1Mjk0MGRiNjA1MzU="
+      languages [de]
+      messageBroker kafka
+      microfrontend false
+      microfrontends []
+      nativeLanguage de
+      otherModules []
+      packageName com.devk.store
+      prodDatabaseType oracle
+      reactive false
+      searchEngine elasticsearch
+      serverPort 8080
+      serviceDiscoveryType eureka
+      skipUserManagement false
+      testFrameworks [cypress, protractor, gatling, cucumber]
+      websocket false
+      withAdminUi true
+  }
+  entities *
+}
+
+
+application {
+  config {
+    applicationType microservice
+     authenticationType jwt
+     baseName product
+     blueprints []
+     buildTool maven
+     cacheProvider hazelcast
+     clientPackageManager npm
+     creationTimestamp 1681484735397
+     databaseType sql
+     devDatabaseType h2Disk
+     dtoSuffix DTO
+     enableGradleEnterprise false
+     enableHibernateCache true
+     enableSwaggerCodegen true
+     enableTranslation true
+     gradleEnterpriseHost ""
+     jhiPrefix jhi
+     jhipsterVersion "7.9.2"
+      jwtSecretKey "MDZjYjkwMWY0YTk5OTI1MzA1YWFjMzk2MGVkNTNkNTIzNGJjMzhiMDcyMGE5ZjRmYWI2MjFiZDczNzVhYjRlMGU4MmU2ODZmYzk4MDFlMTQ3M2Y5YTVkODY4ZDU5OTdlYjljZGI2OWM1MDVmYzliNjFhZTg1Mjk0MGRiNjA1MzU="
+      languages [de, en]
+     messageBroker kafka
+     microfrontend false
+     microfrontends []
+     nativeLanguage de
+     otherModules []
+     packageName com.devk.store
+     prodDatabaseType oracle
+     reactive false
+     searchEngine elasticsearch
+     serverPort 8081
+     serviceDiscoveryType eureka
+     skipClient true
+     skipUserManagement true
+     testFrameworks [cypress, protractor, gatling, cucumber]
+     websocket false
+  }
+  entities Product, ProductCategory, ProductOrder, OrderItem
+}
+
+application {
+  config {
+    applicationType microservice
+     authenticationType jwt
+     baseName invoice
+     blueprints []
+     buildTool maven
+     cacheProvider hazelcast
+     clientPackageManager npm
+     creationTimestamp 1681484735397
+     databaseType sql
+     devDatabaseType h2Disk
+     dtoSuffix DTO
+     enableGradleEnterprise false
+     enableHibernateCache false
+     enableSwaggerCodegen true
+     enableTranslation true
+     gradleEnterpriseHost ""
+     jhiPrefix jhi
+     jhipsterVersion "7.9.2"
+      jwtSecretKey "MDZjYjkwMWY0YTk5OTI1MzA1YWFjMzk2MGVkNTNkNTIzNGJjMzhiMDcyMGE5ZjRmYWI2MjFiZDczNzVhYjRlMGU4MmU2ODZmYzk4MDFlMTQ3M2Y5YTVkODY4ZDU5OTdlYjljZGI2OWM1MDVmYzliNjFhZTg1Mjk0MGRiNjA1MzU="
+      languages [de, en]
+     messageBroker kafka
+     microfrontend false
+     microfrontends []
+     nativeLanguage de
+     otherModules []
+     packageName com.devk.store
+     prodDatabaseType oracle
+     reactive false
+     searchEngine elasticsearch
+     serverPort 8082
+     serviceDiscoveryType eureka
+     skipClient true
+     skipUserManagement true
+     testFrameworks [cypress, protractor, gatling, cucumber]
+     websocket false
+  }
+  entities Invoice, Shipment
+}
+
+application {
+  config {
+    applicationType microservice
+     authenticationType jwt
+     baseName notification
+     blueprints []
+     buildTool maven
+     cacheProvider hazelcast
+     clientPackageManager npm
+     creationTimestamp 1681484735397
+     databaseType sql
+     devDatabaseType h2Disk
+     dtoSuffix DTO
+     enableGradleEnterprise false
+     enableHibernateCache false
+     enableSwaggerCodegen true
+     enableTranslation true
+     gradleEnterpriseHost ""
+     jhiPrefix jhi
+     jhipsterVersion "7.9.2"
+      jwtSecretKey "MDZjYjkwMWY0YTk5OTI1MzA1YWFjMzk2MGVkNTNkNTIzNGJjMzhiMDcyMGE5ZjRmYWI2MjFiZDczNzVhYjRlMGU4MmU2ODZmYzk4MDFlMTQ3M2Y5YTVkODY4ZDU5OTdlYjljZGI2OWM1MDVmYzliNjFhZTg1Mjk0MGRiNjA1MzU="
+      languages [de, en]
+     messageBroker kafka
+     microfrontend false
+     microfrontends []
+     nativeLanguage de
+     otherModules []
+     packageName com.devk.store
+     prodDatabaseType oracle
+     reactive false
+     searchEngine elasticsearch
+     serverPort 8083
+     serviceDiscoveryType eureka
+     skipClient true
+     skipUserManagement true
+     testFrameworks [cypress, protractor, gatling, cucumber]
+     websocket false
+  }
+  entities Notification
+}
+
+/**
+ * Entities for Store Gateway
+ */
+
+// Customer for the store
+entity Customer {
+    firstName String required
+    lastName String required
+    gender Gender required
+    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    phone String required
+    addressLine1 String required
+    addressLine2 String
+    city String required
+    country String required
+}
+
+enum Gender {
+    MALE, FEMALE, OTHER
+}
+
+relationship OneToOne {
+    Customer{user(login) required} to User
+}
+
+service Customer with serviceClass
+paginate Customer with pagination
+dto Customer with mapstruct
+filter Customer
+
+
+/**
+ * Entities for product microservice
+ */
+
+
+// Product sold by the Online store
+entity Product {
+    name String required
+    description String
+    price BigDecimal required min(0)
+    itemSize Size required
+    image ImageBlob
+}
+
+enum Size {
+    S, M, L, XL, XXL
+}
+
+entity ProductCategory {
+    name String required
+    description String
+}
+
+entity ProductOrder {
+    placedDate Instant required
+    status OrderStatus required
+    code String required
+    invoiceId Long
+    customer String required
+}
+
+enum OrderStatus {
+    COMPLETED, PENDING, CANCELLED
+}
+
+entity OrderItem {
+    quantity Integer required min(0)
+    totalPrice BigDecimal required min(0)
+    status OrderItemStatus required
+}
+
+enum OrderItemStatus {
+    AVAILABLE, OUT_OF_STOCK, BACK_ORDER
+}
+
+relationship ManyToOne {
+	OrderItem{product(name) required} to Product
+}
+
+relationship OneToMany {
+   ProductOrder{orderItem} to OrderItem{order(code) required} ,
+   ProductCategory{product} to Product{productCategory(name)}
+}
+
+service Product, ProductCategory, ProductOrder, OrderItem with serviceClass
+paginate Product, ProductOrder, OrderItem with pagination
+microservice Product, ProductOrder, ProductCategory, OrderItem with product
+
+
+/**
+ * Entities for Invoice microservice
+ */
+
+
+// Invoice for sales
+entity Invoice {
+    code String required
+    date Instant required
+    details String
+    status InvoiceStatus required
+    paymentMethod PaymentMethod required
+    paymentDate Instant required
+    paymentAmount BigDecimal required
+}
+
+enum InvoiceStatus {
+    PAID, ISSUED, CANCELLED
+}
+
+entity Shipment {
+    trackingCode String
+    date Instant required
+    details String
+}
+
+enum PaymentMethod {
+    CREDIT_CARD, CASH_ON_DELIVERY, PAYPAL
+}
+
+relationship OneToMany {
+    Invoice{shipment} to Shipment{invoice(code) required}
+}
+
+service Invoice, Shipment with serviceClass
+paginate Invoice, Shipment with pagination
+microservice Invoice, Shipment with invoice
+
+
+/**
+ * Entities for notification microservice
+ */
+
+
+entity Notification {
+    date Instant required
+    details String
+    sentDate Instant required
+    format NotificationType required
+    userId Long required
+    productId Long required
+}
+
+enum NotificationType {
+    EMAIL, SMS, PARCEL
+}
+
+microservice Notification with notification
+
+/**
+ * Deployments
+ */
+
+deployment {
+  deploymentType docker-compose
+  appsFolders [store, invoice, notification, product]
+  dockerRepositoryName "singulus2" // @Replace With Your Docker repo name@
+  serviceDiscoveryType eureka
+  gatewayType	SpringCloudGateway
+}
+
+deployment {
+  deploymentType kubernetes
+  appsFolders [store, invoice, notification, product]
+  dockerRepositoryName "singulus2" // @Replace With Your Docker repo name@
+  serviceDiscoveryType eureka
+  kubernetesServiceType LoadBalancer
+  kubernetesNamespace singulus2
+}
